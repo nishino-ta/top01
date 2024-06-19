@@ -1,0 +1,244 @@
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px;
+}
+.head_btn{
+  display: flex;
+}
+.head_btn1{
+  width: 200px;
+  text-align: center;
+  background-color: palevioletred;
+  color: aliceblue;
+  padding: 20px;
+  margin: 5px;
+}
+.head_btn2{
+  width: 200px;
+  text-align: center;
+  background-color: green;
+  color: aliceblue;
+  padding: 20px;
+  margin: 5px;
+}
+.menu{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 700px;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+img{
+  width: 100%;
+}
+.sec_01{
+  margin: 60px 0;
+}
+.wrapper{
+  max-width: 1200px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.sec_01_content h1{
+  text-align: center;
+  margin-bottom: 20px;
+}
+.sec_01_content p{
+  text-align: center;
+}
+.Form {
+  margin-top: 80px;
+  max-width: 1200px;
+}
+.Form-Item {
+  padding-top: 24px;
+  padding-bottom: 24px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.Form-Item-Label {
+  width: 100%;
+  max-width: 248px;
+  letter-spacing: 0.05em;
+  font-weight: bold;
+  font-size: 18px;
+}
+.Form-Item-Label.isMsg {
+  margin-top: 8px;
+  margin-bottom: auto;
+}
+.Form-Item-Label-Required {
+  border-radius: 3px;
+  margin-right: 8px;
+  margin-left: 15px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  width: 48px;
+  display: inline-block;
+  text-align: center;
+  background: darksalmon;
+  color: #fff;
+  font-size: 14px;
+}
+.Form-Item-Input {
+  border: 1px solid #ddd;
+  margin-left: 40px;
+  padding-left: 1em;
+  padding-right: 1em;
+  height: 48px;
+  flex: 1;
+  width: 100%;
+  font-size: 18px;
+}
+.Form-Item-Textarea {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-left: 40px;
+  padding-left: 1em;
+  padding-right: 1em;
+  flex: 1;
+  font-size: 18px;
+  height: 150px;
+}
+.Form-Btn {
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 280px;
+  display: block;
+  letter-spacing: 0.05em;
+  background: green;
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 80px;
+}
+.cp_ipselect {
+	overflow: hidden;
+	width: 100%;
+  margin-left: 40px;
+  padding-left: 1em;
+  height: 48px;
+  padding-right: 1em;
+  font-size: 19px;
+}
+.cp_ipselect select {
+	width: 100%;
+	cursor: pointer;
+	text-indent: 0.01px;
+	text-overflow: ellipsis;
+	border: none;
+	outline: none;
+	background: transparent;
+	background-image: none;
+	box-shadow: none;
+	appearance: none;
+}
+.cp_ipselect select::-ms-expand {
+    display: none;
+}
+.cp_ipselect.cp_sl01 {
+	border: 1px solid #dddddd;
+	border-radius: 2px;
+	background: #ffffff;
+}
+.cp_ipselect.cp_sl01::before {
+	position: absolute;
+	top: 0.8em;
+	right: 0.9em;
+	width: 0;
+	height: 0;
+	padding: 0;
+	content: '';
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-top: 6px solid #666666;
+	pointer-events: none;
+}
+.cp_ipselect.cp_sl01 select {
+  padding: 8px 38px 8px 8px;
+	color: #666666;
+}
+.q1{
+  margin-left: 40px;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+.sec_btn{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: gainsboro;
+  padding: 50px;
+}
+.sec_btn_content{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.sec_btn_left{
+  background-color: ghostwhite;
+  padding: 50px;
+  width: 48%;
+}
+.sec_btn_left h3{
+  text-align: center;
+  padding-bottom: 10px;
+}
+.sec_btn_right{
+  background-color: ghostwhite;
+  padding: 50px;
+  width: 48%;
+}
+.sec_btn_right h3{
+  text-align: center;
+  padding-bottom: 10px;
+}
+.sec_btn1{
+  width: 300px;
+  display: block;
+  text-align: center;
+  background-color: palevioletred;
+  color: white;
+  padding: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.sec_btn2{
+  width: 300px;
+  display: block;
+  text-align: center;
+  background-color: green;
+  color: white;
+  padding: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+footer{
+  padding-top: 500px;
+}
+footer h3{
+  text-align: center;
+}
+footer p{
+  text-align: center;
+}
+.border{
+  border-top: 1px solid #999999;
+  border-bottom: 1px solid #999999;
+  margin-top: 50px;
+  padding-bottom: 50px;
+}
+.link{
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
