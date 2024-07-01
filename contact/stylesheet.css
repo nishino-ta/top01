@@ -203,7 +203,7 @@ img{
   padding-bottom: 10px;
 }
 .sec_btn1{
-  width: 300px;
+  max-width: 300px;
   display: block;
   text-align: center;
   background-color: palevioletred;
@@ -213,7 +213,7 @@ img{
   margin-right: auto;
 }
 .sec_btn2{
-  width: 300px;
+  max-width: 300px;
   display: block;
   text-align: center;
   background-color: green;
