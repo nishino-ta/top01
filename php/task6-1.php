@@ -6,13 +6,19 @@
   <title>PHP練習</title>
 </head>
 <body>
-  <?= "暑中お見舞い申し上げます。\n";?>
-  <p>
-    <?php echo "暑中お見舞い\n";?>
-    <br>
-    <?php echo '申し上げます。';?>
-  </p>
+<?php
+function showString($num, $str) {
+    for ($i = 0; $i < $num; $i++) {
+        echo $str . "\n";
+    }
+}
 
-  
+showString(3, "気合いだ！");
+?>
+
+
+
+
+
 </body>
 </html>

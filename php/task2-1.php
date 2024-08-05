@@ -12,7 +12,7 @@
   
   <ul>
     <li><?= $week[0];?>曜日</li>
-    <li><?= $week[1];?>曜日</li>
+    <li><?php echo $week[1];?>曜日</li>
     <li><?= $week[2];?>曜日</li>
     <li><?= $week[3];?>曜日</li>
     <li><?= $week[4];?>曜日</li>
