@@ -12,7 +12,7 @@ $i = 0;
 
 echo "<ul>";
 while ($i < count($week)) {
-    echo "<li>" . $week[$i] . "</li>";
+    echo "<li>" . $week[$i] . "</li>\n";
     $i++;
 }
 echo "</ul>";

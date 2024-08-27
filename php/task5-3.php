@@ -17,20 +17,11 @@
 </head>
 <body>
 <?php
-$students = array(
-    "鉛筆" => array(
-        "price" => 100,
-        "price2" => 110,
-    ),
-    "消しゴム" => array(
-        "price" => 200,
-        "price2" => 220,
-    ),
-    "定規" => array(
-        "price" => 300,
-        "price2" => 330,
-    )
-);
+$students = [
+  "鉛筆" => ["price" => 100,"price2" => 110,],
+  "消しゴム" => ["price" => 200,"price2" => 220,],
+  "定規" => ["price" => 300,"price2" => 330,]
+];
 
 echo "<table border='1'>";
 echo "<tr><th>商品</th><th>価格</th><th>税込価格</th></tr>";

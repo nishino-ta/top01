@@ -6,8 +6,7 @@
   <title>PHP練習</title>
 </head>
 <body>
-<?php
-function showString($num, $str) {
+<?php function showString($num, $str) {
     for ($i = 0; $i < $num; $i++) {
         echo $str . "\n";
     }
