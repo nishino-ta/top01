@@ -8,14 +8,15 @@
   <link rel="stylesheet" href="stylesheet.css">
 </head>
 <?php
+var_dump($_POST);
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = htmlspecialchars($_POST['name']);
-    $kana = htmlspecialchars($_POST['kana']);
-    $mail = htmlspecialchars($_POST['mail']);
-    $tel = htmlspecialchars($_POST['tel']);
-    $inquiry = htmlspecialchars($_POST['inquiry']);
-    $textarea = htmlspecialchars($_POST['textarea']);
-    $privacy = htmlspecialchars($_POST['privacy']);
+    $name = $_POST['name'];
+    $kana = $_POST['kana'];
+    $mail = $_POST['mail'];
+    $tel = $_POST['tel'];
+    $inquiry = $_POST['inquiry'];
+    $textarea = $_POST['textarea'];
+    $privacy = $_POST['privacy'];
     echo "<h1>確認画面</h1>";
     echo "<p>お名前: " . $name . "</p>";
     echo "<p>フリガナ: " . $kana . "</p>";
@@ -24,16 +25,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "<p>お問い合わせ項目: " . $inquiry . "</p>";
     echo "<p>お問い合わせ内容: " . $textarea . "</p>";
     echo "<p>個人情報保護方針: " . $privacy . "</p>";
-    echo '<form action="task8-2.php" method="post">';
-    echo '<input type="hidden" name="name" value="' . $name . '">';
-    echo '<input type="hidden" name="kana" value="' . $kana . '">';
-    echo '<input type="hidden" name="mail" value="' . $mail . '">';
-    echo '<input type="hidden" name="tel" value="' . $tel . '">';
-    echo '<input type="hidden" name="inquiry" value="' . $inquiry . '">';
-    echo '<input type="hidden" name="textarea" value="' . $textarea . '">';
-    echo '<input type="hidden" name="privacy" value="' . $privacy . '">';
-    echo '<input type="submit" value="送信する">';
-    echo '</form>';
 }
 ?>
 
@@ -68,46 +59,48 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <div class="wrapper">
         <div class="Form">
           <div class="border">
-            <div class="Form-Item">
-              <p class="Form-Item-Label">
-                お名前<span class="Form-Item-Label-Required">必須</span>
-              </p>
-              <input type="text" name="name" class="Form-Item-Input" placeholder="例）山田太郎">
-            </div>
-            <div class="Form-Item">
-              <p class="Form-Item-Label">フリガナ<span class="Form-Item-Label-Required">必須</span></p>
-              <input type="text" name="kana" class="Form-Item-Input" placeholder="例）ヤマダタロウ">
-            </div>
-            <div class="Form-Item">
-              <p class="Form-Item-Label">メールアドレス<span class="Form-Item-Label-Required">必須</span></p>
-              <input type="email" name="mail" class="Form-Item-Input" placeholder="例）example@gmail.com">
-            </div>
-            <div class="Form-Item">
-              <p class="Form-Item-Label">電話番号<span class="Form-Item-Label-Required">必須</span></p>
-              <input type="email" name="tel" class="Form-Item-Input" placeholder="例）000-0000-0000">
-            </div>
-            <div class="Form-Item">
-              <p class="Form-Item-Label">お問い合わせ項目<span class="Form-Item-Label-Required">必須</span></p>
-              <div class="cp_ipselect cp_sl01">
-                <select required>
-                  <option value="" hidden>選択してください</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                </select>
-                </div>
-            </div>
-            <div class="Form-Item">
-              <p class="Form-Item-Label isMsg">お問い合わせ内容<span class="Form-Item-Label-Required">必須</span></p>
-              <textarea name="textarea" class="Form-Item-Textarea">こちらにお問い合わせ内容をご記入ください</textarea>
-            </div>
-            <div class="Form-Item">
-              <p class="Form-Item-Label">個人情報保護方針<span class="Form-Item-Label-Required">必須</span></p>
-              <input type="checkbox" name="q1" class="q1" value="その1"><a href=""><font color="#006600"><span>個人情報保護方針</span></font></a>に同意します。
-            </div>
+            <form action="task8-2.php" method="POST">
+              <div class="Form-Item">
+                <p class="Form-Item-Label">
+                  お名前<span class="Form-Item-Label-Required">必須</span>
+                </p>
+                <input type="text" name="name" class="Form-Item-Input" placeholder="例）山田太郎" value="<?= $name;?>">
+              </div>
+              <div class="Form-Item">
+                <p class="Form-Item-Label">フリガナ<span class="Form-Item-Label-Required">必須</span></p>
+                <input type="text" name="kana" class="Form-Item-Input" placeholder="例）ヤマダタロウ" value="<?= $kana;?>">
+              </div>
+              <div class="Form-Item">
+                <p class="Form-Item-Label">メールアドレス<span class="Form-Item-Label-Required">必須</span></p>
+                <input type="text" name="mail" class="Form-Item-Input" placeholder="例）example@gmail.com" value="<?= $mail;?>">
+              </div>
+              <div class="Form-Item">
+                <p class="Form-Item-Label">電話番号<span class="Form-Item-Label-Required">必須</span></p>
+                <input type="text" name="tel" class="Form-Item-Input" placeholder="例）000-0000-0000" value="<?= $tel;?>">
+              </div>
+              <div class="Form-Item">
+                <p class="Form-Item-Label">お問い合わせ項目<span class="Form-Item-Label-Required">必須</span></p>
+                <div class="cp_ipselect cp_sl01">
+                  <select name="inquiry">
+                    <option value="" hidden>選択してください</option>
+                    <option value="1" <?php if($inquiry == 1){echo 'selected';}?>>1</option>
+                    <option value="2" <?php if($inquiry == 2){echo 'selected';}?>>2</option>
+                    <option value="3" <?php if($inquiry == 3){echo 'selected';}?>>3</option>
+                    <option value="4" <?php if($inquiry == 4){echo 'selected';}?>>4</option>
+                  </select>
+                  </div>
+              </div>
+              <div class="Form-Item">
+                <p class="Form-Item-Label isMsg">お問い合わせ内容<span class="Form-Item-Label-Required">必須</span></p>
+                <textarea name="textarea" class="Form-Item-Textarea">こちらにお問い合わせ内容をご記入ください</textarea>
+              </div>
+              <div class="Form-Item">
+                <p class="Form-Item-Label">個人情報保護方針<span class="Form-Item-Label-Required">必須</span></p>
+                <input type="checkbox" name="privacy" class="q1" <?php if($privacy == on){echo 'checked';}?>><a href=""><font color="#006600"><span>個人情報保護方針</span></font></a>に同意します。
+              </div>
+              <input type="submit" class="Form-Btn" value="送信する">
+            </form>
           </div>
-          <input type="submit" class="Form-Btn" value="送信する">
         </div>        
       </div>
     </div>
