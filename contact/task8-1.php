@@ -8,23 +8,23 @@
   <link rel="stylesheet" href="stylesheet.css">
 </head>
 <?php
-var_dump($_POST);
+//  var_dump($_POST);
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = $_POST['name'];
-    $kana = $_POST['kana'];
-    $mail = $_POST['mail'];
-    $tel = $_POST['tel'];
-    $inquiry = $_POST['inquiry'];
-    $textarea = $_POST['textarea'];
-    $privacy = $_POST['privacy'];
-    echo "<h1>確認画面</h1>";
-    echo "<p>お名前: " . $name . "</p>";
-    echo "<p>フリガナ: " . $kana . "</p>";
-    echo "<p>メールアドレス: " . $mail . "</p>";
-    echo "<p>電話番号: " . $tel . "</p>";
-    echo "<p>お問い合わせ項目: " . $inquiry . "</p>";
-    echo "<p>お問い合わせ内容: " . $textarea . "</p>";
-    echo "<p>個人情報保護方針: " . $privacy . "</p>";
+  if (!empty($_POST['name'])){$name = $_POST['name'];}
+  else{$error[]="名前を入れてください";}
+  if (!empty($_POST['kana'])){$kana = $_POST['kana'];}
+  else{$error[]="カタカナを入れてください";}
+  if (!empty($_POST['mail'])){$mail = $_POST['mail'];}
+  else{$error[]="メールアドレスを入力してください";}
+  if (!empty($_POST['tel'])){$tel = $_POST['tel'];}
+  else{$error[]="電話番号を入れてください";}
+  if (!empty($_POST['inquiry'])){$inquiry = $_POST['inquiry'];}
+  else{$error[]="お問い合わせ項目を選択してください";}
+  if (!empty($_POST['textarea'])){$textarea = $_POST['textarea'];}
+  else{$error[]="お問い合わせ内容を入力してください";}
+  if (!empty($_POST['privacy'])){$privacy = $_POST['privacy'];}
+  else{$error[]="個人情報保護方針にチェックをしてください";}
+    
 }
 ?>
 
@@ -51,7 +51,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <div class="wrapper">
         <div class="sec_01_content">
           <h1>お問い合わせ</h1>
-          <p>お問い合わせや業務内容に関するご質問は、電話またはこちらのお問い合わせフォームより承っております。<br>後ほど担当者よりご連絡させていただきます。</p>
+          <p>お問い合わせや業務内容に関するご質問は、電話またはこちらのお問い合わせフォームより承っております。<br>後ほど担当者よりご連絡させていただきます。</p><br>
+          <p style="color: red;"><?php 
+          foreach ($error as $grades) {
+          echo $grades."<br>"; }
+          ?></p>
+          <!-- <?php var_dump($error);?> -->
         </div>
       </div>
     </div>
@@ -59,7 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <div class="wrapper">
         <div class="Form">
           <div class="border">
-            <form action="task8-2.php" method="POST">
+            <form action="" method="POST">
               <div class="Form-Item">
                 <p class="Form-Item-Label">
                   お名前<span class="Form-Item-Label-Required">必須</span>
@@ -68,7 +73,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               </div>
               <div class="Form-Item">
                 <p class="Form-Item-Label">フリガナ<span class="Form-Item-Label-Required">必須</span></p>
-                <input type="text" name="kana" class="Form-Item-Input" placeholder="例）ヤマダタロウ" value="<?= $kana;?>">
+                <input type="text" name="kana" 
+                class="Form-Item-Input" placeholder="例）ヤマダタロウ" value="<?= $kana;?>">
               </div>
               <div class="Form-Item">
                 <p class="Form-Item-Label">メールアドレス<span class="Form-Item-Label-Required">必須</span></p>
@@ -92,7 +98,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               </div>
               <div class="Form-Item">
                 <p class="Form-Item-Label isMsg">お問い合わせ内容<span class="Form-Item-Label-Required">必須</span></p>
-                <textarea name="textarea" class="Form-Item-Textarea">こちらにお問い合わせ内容をご記入ください</textarea>
+                <textarea name="textarea" class="Form-Item-Textarea"><?= $textarea; ?></textarea>
               </div>
               <div class="Form-Item">
                 <p class="Form-Item-Label">個人情報保護方針<span class="Form-Item-Label-Required">必須</span></p>
