@@ -65,7 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <div class="wrapper">
         <div class="Form">
           <div class="border">
-            <form action="<?php if(empty($errorMessages)){echo 'task8-2.php';}?>" method="post">
+            <form action="<?php if(empty($error)){echo 'task8-2.php';}?>" method="post">
               <div class="Form-Item">
                 <p class="Form-Item-Label">
                   お名前<span class="Form-Item-Label-Required">必須</span>
