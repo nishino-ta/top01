@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="stylesheet.css">
 </head>
 <?php
-//  var_dump($_POST);
+ var_dump($_POST);
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (!empty($_POST['name'])){$name = $_POST['name'];}
   else{$error[]="名前を入れてください";}
@@ -52,7 +52,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="sec_01_content">
           <h1>お問い合わせ</h1>
           <p>お問い合わせや業務内容に関するご質問は、電話またはこちらのお問い合わせフォームより承っております。<br>後ほど担当者よりご連絡させていただきます。</p><br>
-          <p style="color: red;"><?php 
+          <p style="color: red;">
+            <?php 
           foreach ($error as $grades) {
           echo $grades."<br>"; }
           ?></p>
@@ -64,7 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <div class="wrapper">
         <div class="Form">
           <div class="border">
-            <form action="" method="POST">
+            <form action="<?php if(empty($errorMessages)){echo 'task8-2.php';}?>" method="post">
               <div class="Form-Item">
                 <p class="Form-Item-Label">
                   お名前<span class="Form-Item-Label-Required">必須</span>
